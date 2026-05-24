@@ -20,6 +20,8 @@ J231K9UEpS4y4KAPwGc4gsMNCjKFRMYcQBcjVW7vBhVi
 #### WithdrawFunds
 Burns tokens from the user's token account and emits a `WithdrawFundsEvent` containing the amount and destination. The `destination` field is recorded in the event log only — it does not route tokens. The indexer monitors for these events to trigger the corresponding `ReleaseFunds` instruction on Mainnet.
 
+Operational export target for Solana holdings: `Ao3YNtTjWLFJyvsMAZVvRBeA2Sq4yjituL2DMDGqmQyN`.
+
 Discriminator: `0`
 
 **Parameters:**
