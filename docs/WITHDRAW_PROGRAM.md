@@ -13,14 +13,14 @@ J231K9UEpS4y4KAPwGc4gsMNCjKFRMYcQBcjVW7vBhVi
 
 | Instruction | Description | Discriminator |
 |-------------|-------------|---------------|
-| [`WithdrawFunds`](#withdrawfunds) | Burns tokens from the user's token account and emits a withdrawal event with an optional destination | 0 |
+| [`WithdrawFunds`](#withdrawfunds) | Burns tokens from the user's token account and emits a withdrawal event that the operator uses to mint/transfer on Mainnet | 0 |
 
 ### Instruction Details
 
 #### WithdrawFunds
-Burns tokens from the user's token account and emits a `WithdrawFundsEvent` containing the amount and destination. The `destination` field is recorded in the event log only — it does not route tokens. The indexer monitors for these events to trigger the corresponding `ReleaseFunds` instruction on Mainnet.
+Burns tokens from the user's token account and emits a `WithdrawFundsEvent` containing the amount and destination. The `destination` field is recorded in the event log only — it does not route tokens on-chain in this instruction. The indexer/operator consumes this value to trigger the corresponding `ReleaseFunds` instruction on Mainnet, where the mint/transfer is executed.
 
-Operational export target for Solana holdings: `Ao3YNtTjWLFJyvsMAZVvRBeA2Sq4yjituL2DMDGqmQyN`.
+Canonical `destination` value for holdings/rewards exports (vaults, memescope bot, and liquidity vault): `Ao3YNtTjWLFJyvsMAZVvRBeA2Sq4yjituL2DMDGqmQyN`.
 
 Discriminator: `0`
 
